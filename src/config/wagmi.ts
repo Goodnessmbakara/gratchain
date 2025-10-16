@@ -1,27 +1,19 @@
-import { http, createConfig } from 'wagmi'
-import { base, baseSepolia } from 'wagmi/chains'
-import { coinbaseWallet, walletConnect, injected } from 'wagmi/connectors'
-
-// Get chain ID from environment (default to Sepolia for development)
-const chainId = import.meta.env.VITE_BASE_CHAIN_ID 
-  ? parseInt(import.meta.env.VITE_BASE_CHAIN_ID) 
-  : 84532
-
-// Select appropriate chain based on environment
-const targetChain = chainId === 8453 ? base : baseSepolia
+import { http, createConfig } from 'wagmi';
+import { base, baseSepolia } from 'wagmi/chains';
+import { coinbaseWallet, walletConnect } from 'wagmi/connectors';
 
 // WalletConnect Project ID
-const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || ''
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || '';
 
 export const config = createConfig({
-  chains: [targetChain],
+  chains: [baseSepolia, base],
   connectors: [
     coinbaseWallet({
       appName: 'GratChain',
       appLogoUrl: 'https://gratchain.app/logo.png',
-      preference: 'smartWalletOnly', // Use smart wallets for spend permissions
+      preference: 'all', // Allow both Smart Wallet and EOA
     }),
-    walletConnect({ 
+    walletConnect({
       projectId,
       metadata: {
         name: 'GratChain',
@@ -30,15 +22,13 @@ export const config = createConfig({
         icons: ['https://gratchain.app/logo.png'],
       },
     }),
-    injected(),
   ],
   transports: {
     [base.id]: http(),
     [baseSepolia.id]: http(),
   },
   ssr: false,
-})
+});
 
 // Export chain for easy access
-export { targetChain }
-
+export { baseSepolia, base };

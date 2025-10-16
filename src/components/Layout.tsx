@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { ConnectButton } from './ConnectButton'
+import { ConnectButtonHandler } from './ConnectButton'
 import { Logo } from './Logo'
 import { useAccount, useDisconnect } from 'wagmi'
 
@@ -71,9 +71,11 @@ export function Layout({ children }: LayoutProps) {
                       </button>
                     </div>
                   ) : (
-                    <ConnectButton />
+                    <ConnectButtonHandler />
                   )}
                 </div>
+
+
               </div>
             </div>
           </div>
