@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Layout } from './components/Layout'
 import { NetworkGuard } from './components/NetworkGuard'
 import { CreatorGrid } from './components/CreatorGrid'
+import { BatchTipModal } from './components/BatchTipModal'
 import { useAccount, useChainId } from 'wagmi'
-import { Lightning, HeartStraight, UsersThree, Fish, Wrench, Heart } from 'phosphor-react'
+import { Lightning, HeartStraight, UsersThree, Fish, Wrench, Heart, Stack } from 'phosphor-react'
 import { creators } from './data/creators'
 import { Creator } from './types'
 import { useSpendPermissions } from './hooks/useSpendPermissions'
@@ -13,6 +14,7 @@ function App() {
   const { isConnected } = useAccount()
   const chainId = useChainId()
   const [loadingCreatorId, setLoadingCreatorId] = useState<string | null>(null)
+  const [isBatchModalOpen, setIsBatchModalOpen] = useState(false)
   const { sendTip, error: spendPermissionError, hasActivePermissions } = useSpendPermissions()
 
   const handleTipCreator = async (creator: Creator) => {
@@ -109,15 +111,26 @@ function App() {
           <div id="creators" className="mb-16 scroll-mt-20">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold text-white mb-2">Featured Creators</h3>
-              <p className="text-white/70">
+              <p className="text-white/70 mb-6">
                 Discover amazing creators building on Base
               </p>
+              
+              {/* Batch Tip Button */}
+              <button
+                onClick={() => setIsBatchModalOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+              >
+                <Stack className="w-5 h-5" weight="duotone" />
+                Batch Tip All Creators
+              </button>
             </div>
+            
             <CreatorGrid
               creators={creators}
               onTipCreator={handleTipCreator}
               loadingCreatorId={loadingCreatorId}
             />
+            
             <div className="mt-8 text-center">
               {hasActivePermissions ? (
                 <p className="text-emerald-400 text-sm">
@@ -185,6 +198,13 @@ function App() {
             </p>
           </div>
         </div>
+        
+        {/* Batch Tip Modal */}
+        <BatchTipModal
+          isOpen={isBatchModalOpen}
+          onClose={() => setIsBatchModalOpen(false)}
+          creators={creators}
+        />
       </NetworkGuard>
     </Layout>
   )
