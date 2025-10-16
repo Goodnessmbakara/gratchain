@@ -16,61 +16,65 @@ export function Layout({ children }: LayoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/20 shadow-2xl navbar-glass">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Logo size="md" showText={true} />
+      <header className="sticky top-0 z-50 py-4">
+        <div className="container mx-auto px-6">
+          <div className="backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl rounded-2xl navbar-glass">
+            <div className="px-6 py-4">
+              <div className="flex items-center justify-between">
+                {/* Logo */}
+                <Logo size="md" showText={true} />
 
-            {/* Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <a 
-                href="#creators" 
-                className="text-white/90 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
-              >
-                Discover Creators
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#top-tippers" 
-                className="text-white/90 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
-              >
-                Top Tippers
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#about" 
-                className="text-white/90 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
-              >
-                Our Story
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-orange-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </nav>
-
-            {/* User Section / Connect Button */}
-            <div className="flex items-center gap-4">
-              {isConnected && address ? (
-                <div className="flex items-center gap-3">
-                  <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-white"></div>
-                    </div>
-                    <span className="text-white font-medium text-sm font-mono">
-                      {truncateAddress(address)}
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => disconnect()}
-                    className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 text-white font-medium text-sm transition-all duration-300 hover:scale-105"
+                {/* Navigation Links */}
+                <nav className="hidden lg:flex items-center gap-8">
+                  <a 
+                    href="#creators" 
+                    className="text-white/80 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
                   >
-                    Disconnect
-                  </button>
+                    Discover Creators
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-slate-400 to-slate-300 transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                  <a 
+                    href="#top-tippers" 
+                    className="text-white/80 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
+                  >
+                    Top Tippers
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-slate-400 to-slate-300 transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                  <a 
+                    href="#about" 
+                    className="text-white/80 hover:text-white transition-all duration-300 font-medium text-sm uppercase tracking-wide hover:scale-105 relative group"
+                  >
+                    Our Story
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-slate-400 to-slate-300 transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                </nav>
+
+                {/* User Section / Connect Button */}
+                <div className="flex items-center gap-4">
+                  {isConnected && address ? (
+                    <div className="flex items-center gap-3">
+                      <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center">
+                          <div className="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <span className="text-white/90 font-medium text-sm font-mono">
+                          {truncateAddress(address)}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => disconnect()}
+                        className="px-4 py-2 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 text-white/90 font-medium text-sm transition-all duration-300 hover:scale-105"
+                      >
+                        Disconnect
+                      </button>
+                    </div>
+                  ) : (
+                    <ConnectButton />
+                  )}
                 </div>
-              ) : (
-                <ConnectButton />
-              )}
+              </div>
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ function App() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Tip Seamlessly <span className="text-yellow-300">Onchain</span>
+            Tip Seamlessly <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Onchain</span>
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
             Support creators with zero-popup tipping powered by Base. 
@@ -52,32 +52,32 @@ function App() {
 
         {/* Features */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-6 h-6 text-blue-300" />
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
+            <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
+              <Zap className="w-6 h-6 text-slate-300" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Zero Pop-ups</h3>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/70 text-sm">
               Tip multiple creators without repeated wallet confirmations
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
-              <Heart className="w-6 h-6 text-purple-300" />
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
+            <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
+              <Heart className="w-6 h-6 text-slate-300" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Batch Tipping</h3>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/70 text-sm">
               Tip multiple creators in a single transaction
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center mx-auto mb-4">
-              <Users className="w-6 h-6 text-pink-300" />
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
+            <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
+              <Users className="w-6 h-6 text-slate-300" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Support Creators</h3>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/70 text-sm">
               Empower artists, devs, and writers with onchain value
             </p>
           </div>
@@ -104,11 +104,11 @@ function App() {
             </div>
           </div>
         ) : (
-          <div id="creators" className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center max-w-2xl mx-auto scroll-mt-20">
+          <div id="creators" className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 text-center max-w-2xl mx-auto scroll-mt-20">
             <h3 className="text-3xl font-bold text-white mb-4">
               Connect to See Creators
             </h3>
-            <p className="text-white/80">
+            <p className="text-white/70">
               Connect your wallet to discover and tip amazing creators on Base.
             </p>
           </div>
@@ -126,10 +126,10 @@ function App() {
               { name: "BaseBuilder", tips: "8.3 ETH", avatar: "👷" },
               { name: "CreatorFan", tips: "6.7 ETH", avatar: "❤️" }
             ].map((tipper, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center">
+              <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
                 <div className="text-4xl mb-3">{tipper.avatar}</div>
                 <h4 className="text-xl font-bold text-white mb-1">{tipper.name}</h4>
-                <p className="text-yellow-300 font-semibold">{tipper.tips} tipped</p>
+                <p className="text-emerald-400 font-semibold">{tipper.tips} tipped</p>
               </div>
             ))}
           </div>
@@ -137,14 +137,14 @@ function App() {
 
         {/* About Section */}
         <div id="about" className="mb-16 scroll-mt-20">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center max-w-4xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 text-center max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-6">Our Story</h3>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            <p className="text-white/70 text-lg leading-relaxed mb-6">
               GratChain was born from the vision of frictionless onchain tipping. 
               We believe creators deserve seamless support from their communities, 
               without the barriers of repeated wallet confirmations.
             </p>
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-white/70 text-lg leading-relaxed">
               Built on Base with Spend Permissions, we're pioneering the future 
               of creator monetization—where supporting your favorite artists, 
               developers, and writers feels as easy as a social media like.

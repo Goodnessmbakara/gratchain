@@ -16,7 +16,7 @@ export function ConnectButton() {
           key={connector.id}
           onClick={() => connect({ connector })}
           disabled={isPending}
-          className="group flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 text-white font-medium transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="group flex items-center gap-2 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 text-white/90 font-medium transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           aria-label={`Connect with ${connector.name}`}
         >
           {isPending ? (

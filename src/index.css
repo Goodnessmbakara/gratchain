@@ -41,10 +41,10 @@ code {
 /* GratChain Logo Animation */
 @keyframes logoGlow {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 20px rgba(71, 85, 105, 0.3);
   }
   50% { 
-    box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 30px rgba(100, 116, 139, 0.5);
   }
 }
 
@@ -54,9 +54,9 @@ code {
 
 /* Glassmorphism effect for navbar */
 .navbar-glass {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Smooth transitions */

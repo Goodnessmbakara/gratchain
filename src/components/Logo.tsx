@@ -21,7 +21,7 @@ export function Logo({ size = 'md', showText = true, className = '' }: LogoProps
     <div className={`flex items-center gap-4 ${className}`}>
       {/* Custom GratChain Logo */}
       <div className="relative">
-        <div className={`${sizeClasses[size]} rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg logo-glow`}>
+        <div className={`${sizeClasses[size]} rounded-xl bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 flex items-center justify-center shadow-lg`}>
           {/* GratChain "G" Logo */}
           <svg
             width={size === 'sm' ? 20 : size === 'md' ? 28 : 36}
@@ -47,7 +47,7 @@ export function Logo({ size = 'md', showText = true, className = '' }: LogoProps
           </svg>
         </div>
         {/* Subtle glow effect */}
-        <div className={`absolute inset-0 ${sizeClasses[size]} rounded-xl bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 opacity-20 blur-md`}></div>
+        <div className={`absolute inset-0 ${sizeClasses[size]} rounded-xl bg-gradient-to-br from-slate-500 via-slate-600 to-slate-700 opacity-10 blur-md`}></div>
       </div>
       
       {showText && (
