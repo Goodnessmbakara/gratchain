@@ -1,0 +1,71 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Animated Background Pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="80" stroke="#60A5FA" stroke-width="2"/>
+    <circle cx="1100" cy="530" r="100" stroke="#F59E0B" stroke-width="2"/>
+    <rect x="900" y="50" width="150" height="150" stroke="#60A5FA" stroke-width="2" transform="rotate(15 975 125)"/>
+  </g>
+  
+  <!-- Logo -->
+  <g transform="translate(100, 200)">
+    <circle cx="60" cy="60" r="60" fill="url(#logoGradient)"/>
+    <path d="M60 30C43.2 30 29 44.2 29 61C29 77.8 43.2 92 60 92C67.2 92 73.8 89.4 78.8 85.2V69H60V59H89V88C80.4 95.4 68.2 100 60 100C38.4 100 21 82.6 21 61C21 39.4 38.4 22 60 22C68.2 22 75.4 24.6 81 29L75.8 34.2C70.8 29.2 63.2 30 60 30Z" fill="white"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="250" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="white">
+    GratChain
+  </text>
+  
+  <!-- Tagline -->
+  <text x="250" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#94A3B8">
+    Seamless Onchain Tipping on Base
+  </text>
+  
+  <!-- Features -->
+  <g transform="translate(250, 380)">
+    <!-- Lightning Icon -->
+    <circle cx="15" cy="15" r="15" fill="#F59E0B" opacity="0.2"/>
+    <text x="45" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#E2E8F0">
+      ⚡ Zero-popup tipping with Spend Permissions
+    </text>
+  </g>
+  
+  <g transform="translate(250, 440)">
+    <!-- Stack Icon -->
+    <circle cx="15" cy="15" r="15" fill="#60A5FA" opacity="0.2"/>
+    <text x="45" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#E2E8F0">
+      📦 Batch tip multiple creators at once
+    </text>
+  </g>
+  
+  <g transform="translate(250, 500)">
+    <!-- Base Icon -->
+    <circle cx="15" cy="15" r="15" fill="#0052FF" opacity="0.2"/>
+    <text x="45" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#E2E8F0">
+      🔵 Built on Base for fast, low-cost transactions
+    </text>
+  </g>
+  
+  <!-- URL -->
+  <text x="250" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" fill="#60A5FA">
+    gratchain.vercel.app
+  </text>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,8 +1,10 @@
-# GratChain
+# GratChain ⚡
 
 **Seamless Onchain Tipping on Base**
 
-GratChain is an onchain tipping app built for Base Builder Quest 11. It leverages Spend Permissions (via CDP SDK) to enable frictionless, zero-popup tipping for creators.
+🚀 **Live Demo**: https://gratchain.vercel.app
+
+GratChain is an onchain tipping app built for Base Builder Quest 11. It leverages Spend Permissions (via Base Account SDK) to enable frictionless, zero-popup tipping for creators.
 
 ## Features
 
@@ -32,7 +34,7 @@ GratChain is an onchain tipping app built for Base Builder Quest 11. It leverage
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/gratchain.git
+git clone https://github.com/Goodnessmbakara/gratchain.git
 cd gratchain
 
 # Install dependencies
@@ -91,6 +93,8 @@ This project was built for Base Builder Quest 11, showcasing:
 
 - [PRD](./PRD.md) - Product Requirements Document
 - [Build Plan](./BUILD_PLAN.md) - Phased implementation plan
+- [Deployment Guide](./DEPLOYMENT.md) - Complete deployment instructions
+- [Final Summary](./FINAL_SUMMARY.md) - Project completion summary
 
 ## License
 

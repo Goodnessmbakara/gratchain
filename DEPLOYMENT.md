@@ -149,7 +149,7 @@ For deployment issues:
 
 ---
 
-**Production URL**: https://gratchain.vercel.app (update after deployment)
-**GitHub**: https://github.com/yourusername/GratChain (update with your repo)
+**Production URL**: https://gratchain.vercel.app
+**GitHub**: https://github.com/Goodnessmbakara/gratchain
 **Base Builder Quest**: https://base.org/builder-quests
 

@@ -9,6 +9,9 @@
 ### Product Name
 **GratChain**
 
+### Live URL
+**https://gratchain.vercel.app**
+
 ### Description
 GratChain is a seamless onchain tipping app built on the Base network, designed to allow users to send micro-tips to content creators, artists, developers, or anyone with a wallet address. It leverages **Sub Accounts** and **Auto Spend Permissions** from the Base Account SDK to eliminate repeated wallet pop-ups, creating a "save my card" experience for frictionless, recurring tips. Users connect once, grant permissions, and tip multiple times without interruptions. The app focuses on high-frequency, low-value transactions (e.g., 0.001 ETH tips) to demonstrate improved UX for onchain interactions.
 

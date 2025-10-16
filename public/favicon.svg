@@ -1,0 +1,26 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="128" cy="128" r="128" fill="url(#bgGradient)"/>
+  
+  <!-- Glow Effect -->
+  <circle cx="128" cy="128" r="100" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- G Letter -->
+  <path d="M128 60C96.4 60 70 86.4 70 118C70 149.6 96.4 176 128 176C142.4 176 155.6 170.8 165.6 162.4V130H128V110H186V168C170.8 182.8 150.4 192 128 192C87.2 192 54 158.8 54 118C54 77.2 87.2 44 128 44C150.4 44 170.8 53.2 186 68L171.6 82.4C161.6 72.4 146.4 60 128 60Z" fill="white"/>
+  
+  <!-- Lightning Bolt Accent -->
+  <path d="M155 125L145 145H155L150 160L165 140H155L160 125H155Z" fill="#F59E0B" opacity="0.9"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="128" cy="128" r="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#334155" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
