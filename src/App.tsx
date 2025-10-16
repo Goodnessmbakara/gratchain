@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Layout } from './components/Layout'
-import { NetworkGuard } from './components/NetworkGuard'
+// import { NetworkGuard } from './components/NetworkGuard'	
 import { CreatorGrid } from './components/CreatorGrid'
 import { BatchTipModal } from './components/BatchTipModal'
 import { useAccount, useChainId } from 'wagmi'
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <Layout>
-      <NetworkGuard>
+     	 {/* <NetworkGuard> */}
         {/* Hero Section */}
         <div className="relative text-center mb-16">
           {/* Background Image */}
@@ -205,7 +205,7 @@ function App() {
           onClose={() => setIsBatchModalOpen(false)}
           creators={creators}
         />
-      </NetworkGuard>
+      {/* </NetworkGuard> */}
     </Layout>
   )
 }
