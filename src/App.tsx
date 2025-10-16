@@ -2,24 +2,35 @@ import { useState } from 'react'
 import { Layout } from './components/Layout'
 import { NetworkGuard } from './components/NetworkGuard'
 import { CreatorGrid } from './components/CreatorGrid'
-import { useAccount } from 'wagmi'
+import { useAccount, useChainId } from 'wagmi'
 import { Lightning, HeartStraight, UsersThree, Fish, Wrench, Heart } from 'phosphor-react'
 import { creators } from './data/creators'
 import { Creator } from './types'
+import { useSpendPermissions } from './hooks/useSpendPermissions'
 import toast from 'react-hot-toast'
 
 function App() {
   const { isConnected } = useAccount()
+  const chainId = useChainId()
   const [loadingCreatorId, setLoadingCreatorId] = useState<string | null>(null)
+  const { sendTip, error: spendPermissionError, hasActivePermissions } = useSpendPermissions()
 
   const handleTipCreator = async (creator: Creator) => {
     setLoadingCreatorId(creator.id)
     
-    // Simulate tipping process (will be replaced with actual tipping logic)
     try {
-      // TODO: Implement actual tipping logic with spend permissions
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      if (chainId !== 8453) {
+        toast.error('Please switch to Base network to use spend permissions')
+        return
+      }
+
+      // Use spend permissions for seamless tipping
+      await sendTip(creator.walletAddress, '0.001')
       toast.success(`Successfully tipped ${creator.name}! 🎉`)
+      
+      if (!hasActivePermissions) {
+        toast.success('Spend permission created for future tips! ⚡')
+      }
     } catch (error) {
       toast.error('Failed to send tip. Please try again.')
       console.error('Tip error:', error)
@@ -108,9 +119,20 @@ function App() {
               loadingCreatorId={loadingCreatorId}
             />
             <div className="mt-8 text-center">
-              <p className="text-white/60 text-sm">
-                ⚠️ Spend permissions coming soon! Currently simulating tips.
-              </p>
+              {hasActivePermissions ? (
+                <p className="text-emerald-400 text-sm">
+                  ⚡ Spend permissions active! Tips will be seamless.
+                </p>
+              ) : (
+                <p className="text-white/60 text-sm">
+                  🔄 Setting up spend permissions for seamless tipping...
+                </p>
+              )}
+              {spendPermissionError && (
+                <p className="text-red-400 text-sm mt-2">
+                  ⚠️ {spendPermissionError}
+                </p>
+              )}
             </div>
           </div>
         ) : (
