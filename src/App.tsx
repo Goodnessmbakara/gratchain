@@ -32,7 +32,17 @@ function App() {
     <Layout>
       <NetworkGuard>
         {/* Hero Section */}
-        <div className="text-center mb-16">
+        <div className="relative text-center mb-16">
+          {/* Background Image */}
+          <div className="absolute inset-0 -z-10">
+            <img 
+              src="/images/hero-bg-animated.svg" 
+              alt="Abstract geometric background"
+              className="w-full h-full object-cover opacity-25"
+            />
+            {/* Gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-slate-900/70"></div>
+          </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
             Tip Seamlessly <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Onchain</span>
           </h2>
