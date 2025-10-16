@@ -85,7 +85,7 @@ function App() {
 
         {/* Creators Section */}
         {isConnected ? (
-          <div className="mb-16">
+          <div id="creators" className="mb-16 scroll-mt-20">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold text-white mb-2">Featured Creators</h3>
               <p className="text-white/70">
@@ -104,7 +104,7 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center max-w-2xl mx-auto">
+          <div id="creators" className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center max-w-2xl mx-auto scroll-mt-20">
             <h3 className="text-3xl font-bold text-white mb-4">
               Connect to See Creators
             </h3>
@@ -113,6 +113,44 @@ function App() {
             </p>
           </div>
         )}
+
+        {/* Top Tippers Section */}
+        <div id="top-tippers" className="mb-16 scroll-mt-20">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-white mb-2">Top Tippers</h3>
+            <p className="text-white/70">Community members supporting creators</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: "CryptoWhale", tips: "12.5 ETH", avatar: "🐋" },
+              { name: "BaseBuilder", tips: "8.3 ETH", avatar: "👷" },
+              { name: "CreatorFan", tips: "6.7 ETH", avatar: "❤️" }
+            ].map((tipper, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-3">{tipper.avatar}</div>
+                <h4 className="text-xl font-bold text-white mb-1">{tipper.name}</h4>
+                <p className="text-yellow-300 font-semibold">{tipper.tips} tipped</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* About Section */}
+        <div id="about" className="mb-16 scroll-mt-20">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-6">Our Story</h3>
+            <p className="text-white/80 text-lg leading-relaxed mb-6">
+              GratChain was born from the vision of frictionless onchain tipping. 
+              We believe creators deserve seamless support from their communities, 
+              without the barriers of repeated wallet confirmations.
+            </p>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Built on Base with Spend Permissions, we're pioneering the future 
+              of creator monetization—where supporting your favorite artists, 
+              developers, and writers feels as easy as a social media like.
+            </p>
+          </div>
+        </div>
       </NetworkGuard>
     </Layout>
   )
