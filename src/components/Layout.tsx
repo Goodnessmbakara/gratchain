@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { ConnectButton } from './ConnectButton'
 import { Logo } from './Logo'
-import { useAccount } from 'wagmi'
+import { useAccount, useDisconnect } from 'wagmi'
 
 interface LayoutProps {
   children: ReactNode
@@ -9,6 +9,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const { address, isConnected } = useAccount()
+  const { disconnect } = useDisconnect()
 
   const truncateAddress = (addr: string) => {
     return `${addr.slice(0, 6)}...${addr.slice(-4)}`
@@ -61,7 +62,7 @@ export function Layout({ children }: LayoutProps) {
                     </span>
                   </div>
                   <button
-                    onClick={() => window.location.reload()}
+                    onClick={() => disconnect()}
                     className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 text-white font-medium text-sm transition-all duration-300 hover:scale-105"
                   >
                     Disconnect
