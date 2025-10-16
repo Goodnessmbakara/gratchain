@@ -3,7 +3,7 @@ import { Layout } from './components/Layout'
 import { NetworkGuard } from './components/NetworkGuard'
 import { CreatorGrid } from './components/CreatorGrid'
 import { useAccount } from 'wagmi'
-import { Heart, Zap, Users } from 'lucide-react'
+import { Lightning, HeartStraight, UsersThree, Fish, Wrench, Heart } from 'phosphor-react'
 import { creators } from './data/creators'
 import { Creator } from './types'
 import toast from 'react-hot-toast'
@@ -54,7 +54,7 @@ function App() {
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
             <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-6 h-6 text-slate-300" />
+              <Lightning className="w-6 h-6 text-slate-300" weight="duotone" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Zero Pop-ups</h3>
             <p className="text-white/70 text-sm">
@@ -64,7 +64,7 @@ function App() {
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
             <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
-              <Heart className="w-6 h-6 text-slate-300" />
+              <HeartStraight className="w-6 h-6 text-slate-300" weight="duotone" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Batch Tipping</h3>
             <p className="text-white/70 text-sm">
@@ -74,7 +74,7 @@ function App() {
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:bg-white/10">
             <div className="w-12 h-12 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
-              <Users className="w-6 h-6 text-slate-300" />
+              <UsersThree className="w-6 h-6 text-slate-300" weight="duotone" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Support Creators</h3>
             <p className="text-white/70 text-sm">
@@ -122,12 +122,14 @@ function App() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { name: "CryptoWhale", tips: "12.5 ETH", avatar: "🐋" },
-              { name: "BaseBuilder", tips: "8.3 ETH", avatar: "👷" },
-              { name: "CreatorFan", tips: "6.7 ETH", avatar: "❤️" }
+              { name: "CryptoWhale", tips: "12.5 ETH", icon: Fish },
+              { name: "BaseBuilder", tips: "8.3 ETH", icon: Wrench },
+              { name: "CreatorFan", tips: "6.7 ETH", icon: Heart }
             ].map((tipper, index) => (
               <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
-                <div className="text-4xl mb-3">{tipper.avatar}</div>
+                <div className="w-16 h-16 rounded-full bg-slate-600/30 flex items-center justify-center mx-auto mb-4">
+                  <tipper.icon className="w-8 h-8 text-slate-300" weight="duotone" />
+                </div>
                 <h4 className="text-xl font-bold text-white mb-1">{tipper.name}</h4>
                 <p className="text-emerald-400 font-semibold">{tipper.tips} tipped</p>
               </div>
